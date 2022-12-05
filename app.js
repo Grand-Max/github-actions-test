@@ -7,3 +7,5 @@ app.get("/", function(request, response){
 });
 
 app.listen(80);
+
+wrongName.run();
