@@ -31,8 +31,5 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: Lint Code Base
-      uses: github/super-linter@v4
-      env:
-        VALIDATE_ALL_CODEBASE: false
-        VALIDATE_JAVASCRIPT_ES: true
+      run: npm run lint
     - run: echo "finish!"
