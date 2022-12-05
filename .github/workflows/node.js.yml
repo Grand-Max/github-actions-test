@@ -20,21 +20,19 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - name: Run linters
-      uses: wearerequired/lint-action@v2
-      with:
-        eslint: true
-        prettier: false
-    - name: Run linters
-      uses: wearerequired/lint-action@v2
-      with:
-        eslint: true
-        prettier: false
+    - name: Lint Code Base
+      uses: github/super-linter@v4
+      env:
+        VALIDATE_ALL_CODEBASE: false
+        VALIDATE_JAVASCRIPT_ES: true
     - run: echo "finish!"
