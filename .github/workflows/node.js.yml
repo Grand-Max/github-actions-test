@@ -33,3 +33,5 @@ jobs:
     - name: Lint Code Base
       run: npm run lint
     - run: echo "finish!"
+    - name: Docker image building 
+      run: docker build -t maxutka/mysuperapp:$(date +%s) .
