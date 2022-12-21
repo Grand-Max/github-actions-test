@@ -6,4 +6,6 @@ app.get("/", function(request, response){
     response.end("Hello from Express!");
 });
 
+app.get("/status", (req, res) => res.status(200).json({ status: "ok" }));
+
 app.listen(80);
