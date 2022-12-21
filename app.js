@@ -8,4 +8,4 @@ app.get("/", function(request, response){
 
 app.get("/status", (req, res) => res.status(200).json({ status: "ok" }));
 
-app.listen(80);
+app.listen(3000);
